@@ -8,6 +8,9 @@ before_install:
 script:
   - docker run utumno86/docker-react yarn test -- --coverage
 
+before_deploy:
+  - cd DockerKubernetesCourse/frontend/
+
 deploy:
   provider: elasticbeanstalk
   region: "us-east-1"
@@ -20,4 +23,3 @@ deploy:
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key:
     secure: "$AWS_SECRET_KEY"
-  zip_file: DockerKubernetesCourse/frontend/*
