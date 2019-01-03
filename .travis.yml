@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t utumno86/docker-react -f Dockerfile.dev DockerKubernetesCourse/frontend/
+
+script:
+  - docker run utumno86/docker-react yarn test -- --coverage
