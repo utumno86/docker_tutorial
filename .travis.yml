@@ -3,23 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t utumno86/docker-react -f DockerKubernetesCourse/frontend/Dockerfile.dev DockerKubernetesCourse/frontend/
+  - docker build -t utumno86/fibonacci-client-test -f ./DockerKubernetesCource/fibonacci/client/Dockerfile.dev ./DockerKubernetesCource/fibonacci/client
 
 script:
-  - docker run utumno86/docker-react yarn test -- --coverage
-
-# before_deploy:
-#   - cd DockerKubernetesCourse/frontend/
-
-# # deploy:
-# #   provider: elasticbeanstalk
-# #   region: "us-east-1"
-# #   app: "docker-react"
-# #   env: "DockerReact-env"
-# #   bucket_name: "elasticbeanstalk-us-east-1-821037481133"
-# #   bucket_path: "docker-react"
-# #   on:
-# #     branch: master
-# #   access_key_id: $AWS_ACCESS_KEY
-# #   secret_access_key:
-# #     secure: "$AWS_SECRET_KEY"
+  - docker run utumno86/fibonacci-client-test yarn test -- --coverage
