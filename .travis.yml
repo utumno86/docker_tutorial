@@ -7,3 +7,16 @@ before_install:
 
 script:
   - docker run utumno86/fibonacci-client-test yarn test -- --coverage
+
+after_success:
+  - docker build -t utumno86/fibonacci-client ./DockerKubernetesCourse/fibonacci/client
+  - docker build -t utumno86/fibonacci-nginx ./DockerKubernetesCourse/fibonacci/nginx
+  - docker build -t utumno86/fibonacci-server ./DockerKubernetesCourse/fibonacci/server
+  - docker build -t utumno86/fibonacci-worker ./DockerKubernetesCourse/fibonacci/worker
+  # Log in to the docker cli
+  - echo "$DOCKER_PASSWORD" | docker login -u  "$DOCKER_ID" --password-stdin
+  # Take images and push them to docker hub
+  - docker push utumno86/fibonacci-client
+  - docker push utumno86/fibonacci-nginx
+  - docker push utumno86/fibonacci-server
+  - docker push utumno86/fibonacci-worker
