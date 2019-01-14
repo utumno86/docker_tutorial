@@ -20,3 +20,16 @@ after_success:
   - docker push utumno86/fibonacci-nginx
   - docker push utumno86/fibonacci-server
   - docker push utumno86/fibonacci-worker
+
+  deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "docker-react"
+  env: "DockerReact-env"
+  bucket_name: "elasticbeanstalk-us-east-1-821037481133"
+  bucket_path: "docker-react"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
