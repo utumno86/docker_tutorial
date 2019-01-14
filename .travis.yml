@@ -21,7 +21,7 @@ after_success:
   - docker push utumno86/fibonacci-server
   - docker push utumno86/fibonacci-worker
 
-  deploy:
+deploy:
   provider: elasticbeanstalk
   region: "us-east-1"
   app: "docker-react"
