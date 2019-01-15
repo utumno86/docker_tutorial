@@ -5,25 +5,29 @@
       "name": "fibonacci-client",
       "image": "utumno86/fibonacci-client",
       "hostname": "client",
-      "essential": false
+      "essential": false,
+      "memory": 128
     },
     {
       "name": "fibonacci-worker",
       "image": "utumno86/fibonacci-worker",
       "hostname": "worker",
-      "essential": false
+      "essential": false,
+      "memory": 128
     },
     {
       "name": "fibonacci-server",
       "image": "utumno86/fibonacci-server",
       "hostname": "api",
-      "essential": false
+      "essential": false,
+      "memory": 128
     },
     {
       "name": "fibonacci-nginx",
       "image": "utumno86/fibonacci-nginx",
       "hostname": "nginx",
       "essential": true,
+      "memory": 128,
       "portMappings": [
         {
           "hostPort": 80,
