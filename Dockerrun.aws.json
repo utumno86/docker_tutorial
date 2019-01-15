@@ -1,6 +1,6 @@
 {
   "AWSEBDockerrunVersion": 2,
-  "containerDefintions": [
+  "containerDefinitions": [
     {
       "name": "fibonacci-client",
       "image": "utumno86/fibonacci-client",
