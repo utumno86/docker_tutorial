@@ -2,7 +2,7 @@
 
 docker build -t utumno86/fibonacci-client:latest -t utumno86/fibonacci-client:$SHA ./DockerKubernetesCourse/fibonacci/client
 docker build -t utumno86/fibonacci-server:latest -t utumno86/fibonacci-server:$SHA ./DockerKubernetesCourse/fibonacci/server
-docker build -t utumno86/fibonacci-worker:latest -t utumno86/fibonacci-server:$SHA ./DockerKubernetesCourse/fibonacci/worker
+docker build -t utumno86/fibonacci-worker:latest -t utumno86/fibonacci-worker:$SHA ./DockerKubernetesCourse/fibonacci/worker
 
 docker push utumno86/fibonacci-client:latest
 docker push utumno86/fibonacci-server:latest
