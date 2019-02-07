@@ -14,5 +14,5 @@ docker push utumno86/fibonacci-worker:$SHA
 
 kubectl apply -f ./DockerKubernetesCourse/fibonacci/k8s
 kubectl set image deployments/server-deployment server=utumno86/fibonacci-server:$SHA
-kubectl set image deployments/client-deployment client=utumno86/finonacci-client:$SHA
+kubectl set image deployments/client-deployment client=utumno86/fibnonacci-client:$SHA
 kubectl set image deployments/worker-deployment worker=utumno86/fibonacci-worker:$SHA
